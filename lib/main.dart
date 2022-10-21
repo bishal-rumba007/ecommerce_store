@@ -1,6 +1,7 @@
 import 'package:ecommerce_store/model/cart_item.dart';
 import 'package:ecommerce_store/view/auth/status_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -18,6 +19,11 @@ final boxB = Provider<List<CartItem>>((ref) => []);
 
 void main () async{
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.white
+    )
+  );
   await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(CartItemAdapter());
@@ -40,6 +46,13 @@ class Home extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return GetMaterialApp(
             debugShowCheckedModeBanner: false,
+            theme: ThemeData.light().copyWith(
+              appBarTheme: AppBarTheme(
+                systemOverlayStyle: SystemUiOverlayStyle(
+                  statusBarBrightness: Brightness.light
+                )
+              )
+            ),
             home: AnimatedSplashScreen(
                 duration: 2000,
                 splash: 'assets/icon/deviant-art.png',
