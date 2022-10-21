@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-import '../common_widgets/snack_show.dart';
-import '../provider/cart_provider.dart';
-import '../provider/common_provider.dart';
+import '../../common_widgets/snack_show.dart';
+import '../../provider/cart_provider.dart';
+import '../../provider/common_provider.dart';
 
 enum ActionType { delete }
 

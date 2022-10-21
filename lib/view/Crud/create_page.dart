@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 
-import '../provider/common_provider.dart';
+import '../../provider/common_provider.dart';
 
 class CreatePage extends StatelessWidget {
 

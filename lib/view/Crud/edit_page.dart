@@ -2,10 +2,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
-import '../common_widgets/snack_show.dart';
-import '../model/product.dart';
-import '../provider/common_provider.dart';
-import '../provider/crud_provider.dart';
+import '../../common_widgets/snack_show.dart';
+import '../../model/product.dart';
+import '../../provider/common_provider.dart';
+import '../../provider/crud_provider.dart';
 
 
 class EditPage extends StatelessWidget {

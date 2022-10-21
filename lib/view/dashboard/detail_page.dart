@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sizer/sizer.dart';
 
-import '../common_widgets/snack_show.dart';
-import '../model/product.dart';
+import '../../common_widgets/snack_show.dart';
+import '../../model/product.dart';
 
 
 

@@ -1,15 +1,15 @@
 import 'package:ecommerce_store/provider/crud_provider.dart';
 import 'package:ecommerce_store/provider/userProvider.dart';
-import 'package:ecommerce_store/view/cart_page.dart';
-import 'package:ecommerce_store/view/customize_page.dart';
-import 'package:ecommerce_store/view/detail_page.dart';
+import 'package:ecommerce_store/view/dashboard/cart_page.dart';
+import 'package:ecommerce_store/view/Crud/customize_page.dart';
+import 'package:ecommerce_store/view/dashboard/detail_page.dart';
 import 'package:ecommerce_store/view/history_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-import 'create_page.dart';
+import '../Crud/create_page.dart';
 
 
 class HomePage extends StatelessWidget {

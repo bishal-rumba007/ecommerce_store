@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../view/cart_page.dart';
+import '../view/dashboard/cart_page.dart';
 
 
 class SnackBarShow{
