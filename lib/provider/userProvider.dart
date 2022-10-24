@@ -38,7 +38,6 @@ class UserProvider extends StateNotifier<List<User>>{
         "email": email,
         "password": password,
       });
-
       return 'success';
     } on DioError catch(err){
       return DioException().getDioError(err);

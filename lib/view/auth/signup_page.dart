@@ -1,5 +1,6 @@
 import 'package:ecommerce_store/provider/common_provider.dart';
 import 'package:ecommerce_store/view/auth/login_page.dart';
+import 'package:ecommerce_store/view/dashboard/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';

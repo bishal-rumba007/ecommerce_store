@@ -15,7 +15,8 @@ class HistoryPage extends StatelessWidget {
           final orderData = ref.watch(orderHistory);
           return orderData.when(
               data: (data){
-                return ListView.builder(
+                if( data.isEmpty) return Center(child: Text("Nothing here", style: TextStyle(fontSize: 18),));
+                else return ListView.builder(
                   itemCount: data.length,
                     itemBuilder: (context, index) {
                       DateTime now = DateTime.parse(data[index].dateTime);

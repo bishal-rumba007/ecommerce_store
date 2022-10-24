@@ -10,60 +10,44 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'model/user.dart';
 
-
-
 final boxA = Provider<List<User>>((ref) => []);
 final boxB = Provider<List<CartItem>>((ref) => []);
 
-
-
-void main () async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: Colors.white
-    )
+      SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+        statusBarIconBrightness: Brightness.dark
+      )
   );
   await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(CartItemAdapter());
-  final userBox =  await Hive.openBox<User>('user');
+  final userBox = await Hive.openBox<User>('user');
   final cartBox = await Hive.openBox<CartItem>('carts');
-  runApp(ProviderScope(
-      overrides: [
-        boxA.overrideWithValue(userBox.values.toList()),
-        boxB.overrideWithValue(cartBox.values.toList())
-      ],
-      child: Home()));
+  runApp(ProviderScope(overrides: [
+    boxA.overrideWithValue(userBox.values.toList()),
+    boxB.overrideWithValue(cartBox.values.toList())
+  ], child: Home()));
 }
 
-
 class Home extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData.light().copyWith(
-              appBarTheme: AppBarTheme(
-                systemOverlayStyle: SystemUiOverlayStyle(
-                  statusBarBrightness: Brightness.light
-                )
-              )
-            ),
-            home: AnimatedSplashScreen(
-                duration: 2000,
-                splash: 'assets/icon/deviant-art.png',
-                splashIconSize: 100,
-                nextScreen: StatusPage(),
-                splashTransition: SplashTransition.fadeTransition,
-                pageTransitionType: PageTransitionType.leftToRight,
-                backgroundColor: Colors.white
-            ),
-        );
-      }
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: AnimatedSplashScreen(
+            duration: 2000,
+            splash: 'assets/icon/deviant-art.png',
+            splashIconSize: 100,
+            nextScreen: StatusPage(),
+            splashTransition: SplashTransition.fadeTransition,
+            pageTransitionType: PageTransitionType.leftToRight,
+            backgroundColor: Colors.white
+        ),
+      );
+    });
   }
 }
